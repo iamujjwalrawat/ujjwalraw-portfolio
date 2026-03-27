@@ -92,9 +92,8 @@ export default function Overlay({ scrollYProgress }: { scrollYProgress: MotionVa
 
           <div className="pointer-events-auto">
             <a 
-              href="https://drive.google.com/file/d/1rLRDFZoYx9pVs5ZtiRKKelJSjqV88Hs6/view?usp=sharing" 
-              target="_blank" 
-              rel="noopener noreferrer"
+              href="/resume.pdf" 
+              download="Ujjwal_Raw_Resume.pdf"
               className="group relative inline-flex items-center justify-center px-8 py-4 bg-zinc-900 overflow-hidden rounded-full transition-all duration-300 hover:scale-105 shadow-[0_0_40px_-10px_rgba(217,37,37,0.3)] hover:shadow-[0_0_60px_-15px_rgba(217,37,37,0.6)]"
             >
               {/* Apple-style hover sweep but in Fight Club red */}
