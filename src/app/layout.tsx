@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Ujjwal Rawat | Digital Strategist & Cloud Engineer",
-  description: "Results-oriented Digital Strategist and Cloud Engineer bridging technical execution and business objectives.",
+  title: "Ujjwal Rawat | AI and Technology Strategist",
+  description: "Results-oriented AI and Technology Strategist bridging technical execution and business objectives.",
 };
 
 export default function RootLayout({

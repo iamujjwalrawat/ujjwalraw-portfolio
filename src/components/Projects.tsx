@@ -33,6 +33,7 @@ const PROJECTS = [
     category: "Real-Time Cloud Ordering",
     desc: "Invented a cloud-native architecture with tokenised transaction security and geolocation external dispatch APIs.",
     tech: ["Cloud", "Security SDK", "System Design"],
+    link: "#", // User needs to insert patent link here if separate from CV
   },
   {
     id: "PRJ_02",
@@ -187,6 +188,15 @@ export default function Projects() {
                       </span>
                     ))}
                   </div>
+
+                  {project.link && (
+                    <a href={project.link} target="_blank" rel="noopener noreferrer" className="mt-6 font-mono text-xs uppercase tracking-widest text-[#d92525] hover:text-white transition-colors flex items-center gap-2">
+                       View Document
+                       <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                       </svg>
+                    </a>
+                  )}
                 </div>
               </motion.div>
             ))}

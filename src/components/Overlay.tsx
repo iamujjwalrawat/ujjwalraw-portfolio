@@ -52,7 +52,7 @@ export default function Overlay({ scrollYProgress }: { scrollYProgress: MotionVa
           transition={{ delay: 1.2, duration: 1 }}
           className="mt-8 text-xl md:text-3xl font-light text-zinc-300 max-w-2xl drop-shadow-lg tracking-tight"
         >
-          Digital Strategist & Cloud Engineer.
+          AI and Technology Strategist.
         </motion.p>
       </motion.div>
 

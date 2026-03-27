@@ -37,10 +37,10 @@ export default function ContactBox() {
           </div>
 
           <div className="mt-12 flex gap-4">
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="px-6 py-2 bg-zinc-900/50 hover:bg-white hover:text-black border border-zinc-800 transition-all font-mono text-xs uppercase tracking-widest rounded-full">
+            <a href="https://www.linkedin.com/in/iamujjwalrawat/" target="_blank" rel="noopener noreferrer" className="px-6 py-2 bg-zinc-900/50 hover:bg-white hover:text-black border border-zinc-800 transition-all font-mono text-xs uppercase tracking-widest rounded-full">
               LinkedIn
             </a>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="px-6 py-2 bg-zinc-900/50 hover:bg-white hover:text-black border border-zinc-800 transition-all font-mono text-xs uppercase tracking-widest rounded-full">
+            <a href="https://github.com/iamujjwalrawat" target="_blank" rel="noopener noreferrer" className="px-6 py-2 bg-zinc-900/50 hover:bg-white hover:text-black border border-zinc-800 transition-all font-mono text-xs uppercase tracking-widest rounded-full">
               GitHub
             </a>
           </div>
