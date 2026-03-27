@@ -4,18 +4,18 @@ import { motion, MotionValue, useTransform } from "framer-motion";
 
 export default function Overlay({ scrollYProgress }: { scrollYProgress: MotionValue<number> }) {
   // Apple-like smooth mappings
-  // Section 1: 0% to 20%
-  const opacity1 = useTransform(scrollYProgress, [0, 0.1, 0.2], [1, 1, 0]);
-  const y1 = useTransform(scrollYProgress, [0, 0.2], ["0vh", "-15vh"]);
-  const scale1 = useTransform(scrollYProgress, [0, 0.2], [1, 0.95]);
+  // Section 1: End fade out completely by 15% scroll to prevent overlap
+  const opacity1 = useTransform(scrollYProgress, [0, 0.08, 0.15], [1, 1, 0]);
+  const y1 = useTransform(scrollYProgress, [0, 0.15], ["0vh", "-20vh"]);
+  const scale1 = useTransform(scrollYProgress, [0, 0.15], [1, 0.9]);
 
-  // Section 2: 25% to 55%
-  const opacity2 = useTransform(scrollYProgress, [0.2, 0.3, 0.45, 0.55], [0, 1, 1, 0]);
-  const y2 = useTransform(scrollYProgress, [0.2, 0.3, 0.55], ["10vh", "0vh", "-10vh"]);
+  // Section 2: Start fade in at 22%, fully visible at 32%, fade out at 55%
+  const opacity2 = useTransform(scrollYProgress, [0.22, 0.32, 0.45, 0.55], [0, 1, 1, 0]);
+  const y2 = useTransform(scrollYProgress, [0.22, 0.32, 0.55], ["15vh", "0vh", "-15vh"]);
 
-  // Section 3: 60% to 90%
-  const opacity3 = useTransform(scrollYProgress, [0.55, 0.65, 0.8, 0.95], [0, 1, 1, 0]);
-  const y3 = useTransform(scrollYProgress, [0.55, 0.65, 0.95], ["10vh", "0vh", "-10vh"]);
+  // Section 3: Start fade in at 62%, fully visible at 72%, fade out at 95%
+  const opacity3 = useTransform(scrollYProgress, [0.62, 0.72, 0.85, 0.95], [0, 1, 1, 0]);
+  const y3 = useTransform(scrollYProgress, [0.62, 0.72, 0.95], ["15vh", "0vh", "-15vh"]);
 
   return (
     <div className="absolute inset-0 pointer-events-none z-10 flex flex-col justify-center px-6 md:px-24">
