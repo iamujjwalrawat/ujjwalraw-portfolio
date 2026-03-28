@@ -66,12 +66,15 @@ export default function Overlay({ scrollYProgress }: { scrollYProgress: MotionVa
           <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-50" />
           
           <span className="relative font-mono text-[#d92525] uppercase tracking-[0.2em] text-xs mb-6 block">
-             Summary
+             Professional Summary
           </span>
           <h2 className="relative text-4xl md:text-7xl font-bold tracking-tight text-white leading-[1.1]">
-            <span className="text-zinc-500">Bridging</span> <br/>technical execution<br/>
-            and <span className="text-[#d92525] italic font-serif">business objectives</span>.
+            <span className="text-zinc-500">Bridging</span> <br/>cloud architecture<br/>
+            and <span className="text-[#d92525] italic font-serif">business strategy</span>.
           </h2>
+          <p className="relative mt-6 text-zinc-400 font-mono text-xs leading-relaxed max-w-lg">
+            AI & Technology Strategist with an interdisciplinary background in Cloud Computing (MCA) and Finance (Bachelors). Specialized in digital transformation, cloud-native architecture, and data-driven operational excellence.
+          </p>
         </div>
       </motion.div>
 
@@ -87,7 +90,7 @@ export default function Overlay({ scrollYProgress }: { scrollYProgress: MotionVa
           </span>
           <h2 className="relative text-4xl md:text-7xl font-bold tracking-tight text-white leading-[1.1] max-w-3xl mb-12">
             Driving <span className="underline decoration-[#d92525] decoration-[4px] underline-offset-8">transformation</span><br/>
-            <span className="text-zinc-500 font-light">for the PMO & beyond.</span>
+            <span className="text-zinc-500 font-light">across cloud & finance.</span>
           </h2>
 
           <div className="pointer-events-auto">

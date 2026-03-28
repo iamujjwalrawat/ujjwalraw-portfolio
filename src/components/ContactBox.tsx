@@ -70,14 +70,21 @@ export default function ContactBox() {
               <span className="text-[#d92525] block w-4 h-4 rounded-full bg-black border border-[#d92525]" />
               New Delhi, India
             </p>
+            <p className="flex items-center gap-4 hover:text-white transition-colors cursor-pointer group">
+              <span className="text-[#d92525] block w-4 h-4 rounded-full bg-black border border-[#d92525]" />
+              <a href="https://iamujjwalraw.netlify.app" target="_blank" rel="noopener noreferrer">iamujjwalraw.netlify.app</a>
+            </p>
           </div>
 
-          <div className="mt-12 flex gap-4">
+          <div className="mt-12 flex flex-wrap gap-4">
             <a href="https://www.linkedin.com/in/iamujjwalrawat/" target="_blank" rel="noopener noreferrer" className="px-6 py-2 bg-zinc-900/50 hover:bg-white hover:text-black border border-zinc-800 transition-all font-mono text-xs uppercase tracking-widest rounded-full">
               LinkedIn
             </a>
             <a href="https://github.com/iamujjwalrawat" target="_blank" rel="noopener noreferrer" className="px-6 py-2 bg-zinc-900/50 hover:bg-white hover:text-black border border-zinc-800 transition-all font-mono text-xs uppercase tracking-widest rounded-full">
               GitHub
+            </a>
+            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="px-6 py-2 bg-[#d92525]/20 hover:bg-[#d92525] text-[#d92525] hover:text-white border border-[#d92525]/50 transition-all font-mono text-xs uppercase tracking-widest rounded-full">
+              Resume PDF
             </a>
           </div>
         </motion.div>
