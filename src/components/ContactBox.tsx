@@ -1,8 +1,44 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 
 export default function ContactBox() {
+  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setLoading(true);
+    setStatus("idle");
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      name: formData.get("name"),
+      email: formData.get("email"),
+      message: formData.get("message"),
+    };
+    
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      if (res.ok) {
+        setStatus("success");
+        (e.target as HTMLFormElement).reset();
+      } else {
+        setStatus("error");
+      }
+    } catch (err) {
+      console.error(err);
+      setStatus("error");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <section className="relative z-20 bg-[#000] text-zinc-100 py-32 px-6 md:px-24 border-t border-zinc-900 border-dashed">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
@@ -15,7 +51,7 @@ export default function ContactBox() {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
           <span className="font-mono text-[#d92525] uppercase tracking-[0.2em] text-xs mb-6 block">
-             Initiate Link
+             Get in touch
           </span>
           <h2 className="text-5xl md:text-7xl font-bold uppercase tracking-tighter leading-none mb-8">
             Let's <span className="text-zinc-600 font-serif italic text-4xl md:text-6xl">Connect</span>
@@ -57,20 +93,11 @@ export default function ContactBox() {
           {/* subtle glow */}
           <div className="absolute top-0 right-0 w-64 h-64 bg-[#d92525]/10 blur-[100px] pointer-events-none" />
 
-          {/* Form wrapper needs hidden inputs for Netlify */}
+          {/* Custom SMTP Backend Form Integration */}
           <form 
-            name="contact" 
-            method="POST" 
-            data-netlify="true" 
-            netlify-honeypot="bot-field"
-            action="/?success=true"
+            onSubmit={handleSubmit}
             className="flex flex-col gap-8 relative z-10"
           >
-            <input type="hidden" name="form-name" value="contact" />
-            <div className="hidden">
-              <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
-            </div>
-
             <div className="flex flex-col gap-2">
               <label htmlFor="name" className="font-mono text-xs text-zinc-500 uppercase tracking-widest">Name</label>
               <input 
@@ -109,17 +136,25 @@ export default function ContactBox() {
 
             <button 
               type="submit" 
-              className="group relative self-start px-8 py-4 bg-white text-black font-bold uppercase tracking-widest text-xs rounded-full overflow-hidden hover:scale-105 transition-all duration-300"
+              disabled={loading}
+              className="group relative self-start px-8 py-4 bg-white text-black font-bold uppercase tracking-widest text-xs rounded-full overflow-hidden hover:scale-105 transition-all duration-300 disabled:opacity-50"
             >
               <span className="relative z-10 flex items-center gap-2">
-                Send Message
-                <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
+                {loading ? "Sending securely..." : "Send Message"}
+                {!loading && (
+                  <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                )}
               </span>
               <div className="absolute inset-0 bg-[#d92525] translate-y-[100%] group-hover:translate-y-0 transition-transform duration-300" />
-              {/* Force text color inverted on hover via clever mix blend mode or just accept the red bg */}
             </button>
+            {status === "success" && (
+              <p className="text-green-500 font-mono text-sm">Message sent successfully! I'll be in touch shortly.</p>
+            )}
+            {status === "error" && (
+              <p className="text-[#d92525] font-mono text-sm">Operation failed. Please try reaching me directly via email.</p>
+            )}
           </form>
         </motion.div>
       </div>

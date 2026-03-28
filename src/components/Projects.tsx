@@ -28,6 +28,14 @@ const EXPERIENCES = [
 
 const PROJECTS = [
   {
+    id: "CERT_CLAUDE",
+    title: "Anthropic Claude Certification",
+    category: "AI & Prompt Engineering",
+    desc: "Certified by Skilljar in building, testing, and deploying high-performance applications leveraging Claude and advanced AI methodologies.",
+    tech: ["Anthropic", "Prompt Engineering", "LLMs"],
+    link: "https://anthropic.skilljar.com/",
+  },
+  {
     id: "PATENT_IN",
     title: "National Patent 202541058252A",
     category: "Real-Time Cloud Ordering",
@@ -126,24 +134,25 @@ export default function Projects() {
 
 
         {/* --- PROJECTS SECTION --- */}
-        <div>
+        {/* Humanized Header - Projects block */}
+        <div className="mt-24">
           <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6"
           >
             <div>
-              <span className="font-mono text-[#d92525] uppercase tracking-widest text-xs mb-4 block">
-                // Classified
+              <span className="font-mono text-[#d92525] uppercase tracking-[0.2em] text-xs mb-4 block">
+                Professional Profile
               </span>
               <h2 className="text-5xl md:text-7xl font-bold uppercase tracking-tighter leading-none">
-                Strategic <span className="text-zinc-600 font-serif italic">Assets</span>
+                Selected <span className="text-zinc-600 font-serif italic">Expertise</span>
               </h2>
             </div>
             <p className="max-w-xs text-zinc-500 font-mono text-xs uppercase opacity-80 border-l-2 border-[#d92525] pl-4">
-              Patented architectures and experimental engineering modules.
+              Real-world systems, product engineering, and AI architectures.
             </p>
           </motion.div>
 

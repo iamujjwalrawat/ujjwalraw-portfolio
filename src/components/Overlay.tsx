@@ -32,7 +32,7 @@ export default function Overlay({ scrollYProgress }: { scrollYProgress: MotionVa
             transition={{ delay: 0.5, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
             <span className="font-mono text-[#d92525] uppercase tracking-[0.2em] text-xs inline-block bg-black/40 backdrop-blur-md px-4 py-2 rounded-full border border-[#d92525]/30">
-              Portfolio Access
+              Welcome
             </span>
           </motion.div>
         </div>
@@ -83,7 +83,7 @@ export default function Overlay({ scrollYProgress }: { scrollYProgress: MotionVa
         <div className="bg-black/20 p-8 md:p-12 border-r border-[#d92525]/50 backdrop-blur-xl rounded-l-3xl shadow-2xl relative overflow-hidden flex flex-col items-end">
           
           <span className="relative font-mono text-[#d92525] uppercase tracking-[0.2em] text-xs mb-6 block">
-            Curriculum Vitae
+            Experience
           </span>
           <h2 className="relative text-4xl md:text-7xl font-bold tracking-tight text-white leading-[1.1] max-w-3xl mb-12">
             Driving <span className="underline decoration-[#d92525] decoration-[4px] underline-offset-8">transformation</span><br/>
