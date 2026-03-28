@@ -68,13 +68,30 @@ export default function Overlay({ scrollYProgress }: { scrollYProgress: MotionVa
           <span className="relative font-mono text-[#d92525] uppercase tracking-[0.2em] text-xs mb-6 block">
              Professional Summary
           </span>
-          <h2 className="relative text-4xl md:text-7xl font-bold tracking-tight text-white leading-[1.1]">
-            <span className="text-zinc-500">Bridging</span> <br/>cloud architecture<br/>
-            and <span className="text-[#d92525] italic font-serif">business strategy</span>.
-          </h2>
-          <p className="relative mt-6 text-zinc-400 font-mono text-xs leading-relaxed max-w-lg">
-            AI & Technology Strategist with an interdisciplinary background in Cloud Computing (MCA) and Finance (Bachelors). Specialized in digital transformation, cloud-native architecture, and data-driven operational excellence.
-          </p>
+
+          <div className="relative space-y-3 text-lg md:text-2xl font-light leading-snug tracking-tight max-w-3xl">
+            <p className="text-white">
+              Results-oriented <span className="text-[#d92525] font-semibold">AI Technology Strategist</span> and <span className="text-[#d92525] font-semibold">Cloud Engineer</span>
+            </p>
+            <p className="text-zinc-300">
+              bridging the gap between <span className="italic text-white">technical execution</span> and <span className="italic text-white">business objectives.</span>
+            </p>
+            <p className="text-zinc-400">
+              Proven track record driving <span className="text-white font-medium">digital transformation</span> for Government (PMO) and Banking sectors
+            </p>
+            <p className="text-zinc-400">
+              by engineering <span className="text-white font-medium">resilient, high-availability systems.</span>
+            </p>
+            <p className="text-zinc-500 text-base md:text-lg pt-1">
+              Dedicated to solving scalability challenges to maximize <span className="text-zinc-300">operational efficiency, profit, and revenue.</span>
+            </p>
+            <p className="text-zinc-500 text-base md:text-lg">
+              Certified <span className="text-[#d92525] font-mono text-sm uppercase tracking-wider">Azure Developer</span> and <span className="text-[#d92525] font-mono text-sm uppercase tracking-wider">Terraform Associate</span> —
+            </p>
+            <p className="text-zinc-500 text-base md:text-lg">
+              a <span className="text-white">National Patent-author</span> with digital technology inclination and financial acumen.
+            </p>
+          </div>
         </div>
       </motion.div>
 
