@@ -55,17 +55,6 @@ const VOLUNTEERING = [
 const EDUCATION = [
   {
     id: "EDU_01",
-    degree: "Master of Computer Applications",
-    specialization: "Cloud Computing & SaaS",
-    institution: "Amity Institute of Information Technology, Amity University",
-    location: "Noida, India",
-    period: "2024 – 2026",
-    grade: null,
-    honours: [],
-    courses: ["Cloud Architecture", "Enterprise Data Management", "Distributed Systems", "Software Engineering", "AI & ML", "Agile Methodologies"],
-  },
-  {
-    id: "EDU_02",
     degree: "Bachelor of Technology",
     specialization: "Computer Science Engineering",
     institution: "SRM University AP",
