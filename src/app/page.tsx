@@ -15,9 +15,11 @@ export default function Home() {
           {/* Nav Links */}
           <div className="flex flex-wrap justify-center gap-6 mb-10 font-mono text-[10px] uppercase tracking-[0.3em] text-zinc-500">
             <a href="#experience" className="hover:text-[#d92525] transition-colors">Experience</a>
+            <a href="#volunteering" className="hover:text-[#d92525] transition-colors">Volunteering</a>
             <a href="#education" className="hover:text-[#d92525] transition-colors">Education</a>
             <a href="#projects" className="hover:text-[#d92525] transition-colors">Projects</a>
             <a href="#certifications" className="hover:text-[#d92525] transition-colors">Certifications</a>
+            <a href="#honours" className="hover:text-[#d92525] transition-colors">Honours</a>
             <a href="#skills" className="hover:text-[#d92525] transition-colors">Skills</a>
             <a href="https://www.linkedin.com/in/iamujjwalrawat/" target="_blank" rel="noopener noreferrer" className="hover:text-[#d92525] transition-colors">LinkedIn ↗</a>
             <a href="https://github.com/iamujjwalrawat" target="_blank" rel="noopener noreferrer" className="hover:text-[#d92525] transition-colors">GitHub ↗</a>

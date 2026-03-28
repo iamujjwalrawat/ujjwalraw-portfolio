@@ -41,6 +41,17 @@ const EXPERIENCES = [
   },
 ];
 
+const VOLUNTEERING = [
+  {
+    id: "VOL_01",
+    role: "Fundraising Volunteer",
+    org: "WWF-India",
+    period: "Aug 2025 – Sep 2025 · 2 mos",
+    cause: "Animal Welfare",
+    desc: "Contributed to fundraising efforts for wildlife conservation and animal welfare initiatives under WWF-India's mandate.",
+  },
+];
+
 const EDUCATION = [
   {
     id: "EDU_01",
@@ -49,6 +60,8 @@ const EDUCATION = [
     institution: "Amity Institute of Information Technology, Amity University",
     location: "Noida, India",
     period: "2024 – 2026",
+    grade: null,
+    honours: [],
     courses: ["Cloud Architecture", "Enterprise Data Management", "Distributed Systems", "Software Engineering", "AI & ML", "Agile Methodologies"],
   },
   {
@@ -58,6 +71,11 @@ const EDUCATION = [
     institution: "SRM University AP",
     location: "Andhra Pradesh, India",
     period: "2021 – 2025",
+    grade: "First Class",
+    honours: [
+      "Merit Scholar",
+      "National Patent Author — Cloud Computing & Distributed Systems (Published: Indian Patent Office / IPO Journal)",
+    ],
     courses: ["Data Structures", "Algorithms", "Operating Systems", "Computer Networks", "Database Systems", "Software Engineering"],
   },
 ];
@@ -117,6 +135,36 @@ const CERTIFICATIONS = [
     title: "Building with the Claude API",
     link: "https://verify.skilljar.com/c/o833xs8yyx35",
     issuer: "Anthropic",
+  },
+];
+
+const HONOURS = [
+  {
+    id: "HON_01",
+    title: "Encore 2022 — Finalist",
+    subtitle: "Storytelling Competition on Entrepreneurship (Green IT)",
+    issuer: "Jaipuria Institute of Management, Indore",
+    date: "Jan 2022",
+    desc: "Finalist in a national storytelling competition. Pitched an idea on improving malls and buildings using Pro-Renewable Materials for sustainable construction and maintenance.",
+    tags: ["Green IT", "Entrepreneurship", "Sustainability"],
+  },
+  {
+    id: "HON_02",
+    title: "WHAT IF — Winner",
+    subtitle: "Monthly Article Writing Competition · November 2021 Edition",
+    issuer: "The Bhopal School of Social Sciences",
+    date: "Nov 2021",
+    desc: "Won the November 2021 edition of the monthly article writing competition. Associated with SRM University, AP.",
+    tags: ["Writing", "Research", "SRM University AP"],
+  },
+  {
+    id: "HON_03",
+    title: "AR with Snapchat Lens Studio",
+    subtitle: "Snap Badge — Community Recognition",
+    issuer: "Snap, Inc.",
+    date: "Jan 2021",
+    desc: "Built 3 viral Lenses using Snapchat's Lens Studio. Lenses went live for 3 months. Created 3D and AI face-mask recognition. Earned the official Snap Badge from Snap, Inc.'s Community.",
+    tags: ["Augmented Reality", "3D Design", "AI Face Recognition", "Lens Studio"],
   },
 ];
 
@@ -226,6 +274,66 @@ export default function Projects() {
           </div>
         </div>
 
+        {/* ─── VOLUNTEERING ─── */}
+        <div id="volunteering">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="mb-16"
+          >
+            <span className="font-mono text-[#d92525] uppercase tracking-widest text-xs mb-4 block">
+              // Community.Service
+            </span>
+            <h2 className="text-5xl md:text-7xl font-bold uppercase tracking-tighter leading-none">
+              Volunteering <span className="text-zinc-600 font-serif italic">& Causes</span>
+            </h2>
+          </motion.div>
+
+          <div className="space-y-4">
+            {VOLUNTEERING.map((vol, i) => (
+              <motion.div
+                key={vol.id}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.6, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                className="group relative backdrop-blur-3xl bg-white/[0.02] border border-white/10 hover:border-[#d92525]/40 transition-all duration-500 rounded-2xl overflow-hidden"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-[#d92525]/0 via-[#d92525]/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out" />
+                <div className="relative z-10 p-8 md:p-10">
+                  <div className="flex flex-col md:flex-row justify-between gap-4 mb-4">
+                    <div>
+                      <span className="font-mono text-[10px] tracking-widest text-[#d92525] mb-2 block">
+                        {vol.id} / VOLUNTEER
+                      </span>
+                      <h3 className="text-2xl md:text-3xl font-bold tracking-tight text-white">
+                        {vol.role}
+                      </h3>
+                      <h4 className="text-zinc-400 font-medium mt-1 uppercase tracking-wider text-sm">
+                        {vol.org}
+                      </h4>
+                    </div>
+                    <div className="flex flex-col items-start md:items-end gap-2 self-start">
+                      <span className="font-mono text-xs text-zinc-500 border border-zinc-800 px-4 py-2 rounded-full whitespace-nowrap">
+                        {vol.period}
+                      </span>
+                      <span className="font-mono text-[10px] text-emerald-500 border border-emerald-900/50 bg-emerald-900/20 px-3 py-1 rounded-full uppercase tracking-widest">
+                        {vol.cause}
+                      </span>
+                    </div>
+                  </div>
+                  <p className="text-zinc-400 font-light text-sm leading-relaxed flex items-start gap-3">
+                    <span className="text-[#d92525] mt-1.5 text-[8px]">▶</span>
+                    {vol.desc}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
         {/* ─── EDUCATION ─── */}
         <div id="education">
           <motion.div
@@ -260,9 +368,32 @@ export default function Projects() {
                     <span className="font-mono text-xs text-zinc-500 border border-zinc-800 px-3 py-1 rounded-full">{edu.period}</span>
                   </div>
                   <h3 className="text-xl font-bold text-white mb-1">{edu.degree}</h3>
-                  <p className="text-[#d92525] font-mono text-xs uppercase tracking-wider mb-3">{edu.specialization}</p>
+                  <p className="text-[#d92525] font-mono text-xs uppercase tracking-wider mb-1">{edu.specialization}</p>
                   <p className="text-zinc-300 font-medium mb-1">{edu.institution}</p>
-                  <p className="text-zinc-500 text-sm mb-5">{edu.location}</p>
+                  <p className="text-zinc-500 text-sm mb-4">{edu.location}</p>
+
+                  {/* Grade badge */}
+                  {edu.grade && (
+                    <div className="flex items-center gap-2 mb-4">
+                      <span className="font-mono text-[10px] text-zinc-500 uppercase tracking-widest">Grade:</span>
+                      <span className="px-3 py-1 bg-amber-500/10 border border-amber-500/30 text-amber-400 font-mono text-[10px] uppercase tracking-widest rounded-full">
+                        {edu.grade}
+                      </span>
+                    </div>
+                  )}
+
+                  {/* Honours */}
+                  {edu.honours.length > 0 && (
+                    <div className="mb-5 space-y-2">
+                      {edu.honours.map((h, j) => (
+                        <div key={j} className="flex items-start gap-2 text-zinc-300 text-xs font-light">
+                          <span className="text-amber-400 mt-1 text-[8px] shrink-0">★</span>
+                          {h}
+                        </div>
+                      ))}
+                    </div>
+                  )}
+
                   <div className="flex flex-wrap gap-2">
                     {edu.courses.map((c) => (
                       <span key={c} className="px-2 py-1 bg-black/50 text-zinc-400 font-mono text-[9px] rounded border border-zinc-900">
@@ -409,6 +540,71 @@ export default function Projects() {
               ))}
             </div>
           </motion.div>
+        </div>
+
+        {/* ─── HONOURS & ACHIEVEMENTS ─── */}
+        <div id="honours">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="mb-16"
+          >
+            <span className="font-mono text-[#d92525] uppercase tracking-widest text-xs mb-4 block">
+              // Honours.Unlocked
+            </span>
+            <h2 className="text-5xl md:text-7xl font-bold uppercase tracking-tighter leading-none">
+              Honours <span className="text-zinc-600 font-serif italic">& Achievements</span>
+            </h2>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {HONOURS.map((hon, i) => (
+              <motion.div
+                key={hon.id}
+                initial={{ opacity: 0, y: 30, scale: 0.96 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.6, delay: i * 0.15, ease: [0.16, 1, 0.3, 1] }}
+                className="group relative bg-white/[0.02] border border-white/10 hover:border-amber-500/40 transition-all duration-500 rounded-2xl overflow-hidden p-8 flex flex-col"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-amber-500/0 to-amber-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="relative z-10 flex flex-col flex-1">
+                  {/* Header row */}
+                  <div className="flex justify-between items-start mb-3">
+                    <span className="font-mono text-[10px] tracking-widest text-amber-500">{hon.id}</span>
+                    <span className="font-mono text-[10px] text-zinc-600 border border-zinc-800 px-2 py-0.5 rounded-full">{hon.date}</span>
+                  </div>
+
+                  {/* Title */}
+                  <h3 className="text-xl font-bold text-white mb-1 group-hover:text-amber-400 transition-colors leading-tight">
+                    {hon.title}
+                  </h3>
+                  <p className="font-mono text-[10px] text-amber-500/70 uppercase tracking-wider mb-2">{hon.subtitle}</p>
+
+                  {/* Issuer */}
+                  <p className="text-zinc-500 text-xs mb-4 font-mono">
+                    Issued by {hon.issuer}
+                  </p>
+
+                  {/* Description */}
+                  <p className="text-zinc-400 text-sm font-light leading-relaxed flex-1 mb-5">
+                    {hon.desc}
+                  </p>
+
+                  {/* Tags */}
+                  <div className="flex flex-wrap gap-2 mt-auto">
+                    {hon.tags.map((tag) => (
+                      <span key={tag} className="px-2 py-1 bg-amber-500/5 border border-amber-500/20 text-amber-500/70 font-mono text-[9px] uppercase rounded-md">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
 
         {/* ─── SKILLS ─── */}
